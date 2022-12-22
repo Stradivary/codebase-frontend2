@@ -1,7 +1,7 @@
 {
-  "name": "codebase-frontend",
+  "name": "smk-telkom-malang-codebase-tefa",
   "version": "0.2.0",
-  "description": "Source code of Front End's codebase",
+  "description": "Source Code SMK Telkom Malang Frontend",
   "engines": {
     "npm": ">=3"
   },
@@ -18,7 +18,8 @@
     "start": "babel-node tools/distServer.js",
     "test": "jest --passWithNoTests",
     "test:CI": "babel-node tools/testCi.js",
-    "test:cover": "npm run test -- --coverage ",
+    "test:cover": "npm run test -- --coverage && npm run open:cover",
+    "open:cover": "opn ./coverage/lcov-report/index.html",
     "test:cover:CI": "npm run test:CI -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "test:watch": "jest --watch"
   },
@@ -80,6 +81,7 @@
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^2.4.5",
     "mockdate": "^3.0.2",
+    "opn-cli": "^3.1.0",
     "postcss": "^8.2.6",
     "postcss-loader": "^6.2.1",
     "prompt": "^1.1.0",
